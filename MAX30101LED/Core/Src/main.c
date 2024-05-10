@@ -31,6 +31,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define MAX30101_ADDR 0b10101110
+#define  FIFO_WR_PTR 0x04
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,6 +49,9 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 HAL_StatusTypeDef i2c_status;
+uint8_t FIFOWP[5];
+uint8_t FIFORP[5];
+uint8_t FIFOData[6];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -117,6 +122,9 @@ int main(void)
 // 	  HAL_I2C_Mem_Write(&hi2c1, 0b10101110, 0x11, I2C_MEMADD_SIZE_8BIT, DataMultiLED, 1,100);
 //   }
 
+  //into Mode
+  uint8_t DataMode[1] = {0x02};
+  HAL_I2C_Mem_Write(&hi2c1, MAX30101_ADDR, 0x09, I2C_MEMADD_SIZE_8BIT, DataMode, 1, 100);
 
    //Mode configuration
    uint8_t Data[1] = {0b00000111};
@@ -134,6 +142,40 @@ int main(void)
    //Open LED-+
    uint8_t DataMultiLED[1] = {0b00010011};
    HAL_I2C_Mem_Write(&hi2c1, 0b10101110, 0x11, I2C_MEMADD_SIZE_8BIT, DataMultiLED, 1,100);
+
+   //FIFO Configuration
+   //Set sample average
+   uint8_t DataFIFOConf[1] = {0b01011111};
+   HAL_I2C_Mem_Write(&hi2c1, MAX30101_ADDR,0x08, I2C_MEMADD_SIZE_8BIT, DataFIFOConf, 1,100);
+
+//   //Enable roll over if FIFO over flows
+//   uint8_t DataFIFOEn[1] = {0b11111111};
+//   HAL_I2C_Mem_Write(&hi2c1, MAX30101_ADDR, 0x08, I2C_MEMADD_SIZE_8BIT, DataFIFOEn, 1,100);
+
+//Read FIFO
+
+   //Read the FIFO Write Pointer
+//   HAL_I2C_Mem_Read(&hi2c1, MAX30101_ADDR, 0x04, I2C_MEMADD_SIZE_8BIT, FIFOWP, 4, 100);
+   HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, 0x04, 1, 1000);
+   HAL_I2C_Master_Receive(&hi2c1, MAX30101_ADDR, FIFOWP, 4, 1000);
+
+
+   //Read the FIFO Read Pointer
+//   HAL_I2C_Mem_Read(&hi2c1, MAX30101_ADDR, 0x06, I2C_MEMADD_SIZE_8BIT, pData, Size, 100);
+   HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, 0x06, 1, 1000);
+   HAL_I2C_Master_Receive(&hi2c1, MAX30101_ADDR, FIFORP, 4, 1000);
+
+   int8_t num_samples;
+   num_samples = FIFOWP - FIFORP;
+   if (num_samples < 1)
+   {
+	   num_samples += 32;
+   }
+   for (int8_t i = 0; i < num_samples; i++){
+	   uint8_t sample[6];
+	   HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, 0x07, 1, 1000);
+	   HAL_I2C_Master_Receive(&hi2c1, MAX30101_ADDR, FIFOData, 6, 1000);
+   }
 
 
   /* USER CODE END 2 */

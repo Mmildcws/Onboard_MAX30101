@@ -43,3 +43,453 @@ Finished building: default.size.stdout
  
 Finished building: MAX30101LED.list
  
+21:39:28 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  18984	     20	   1916	  20920	   51b8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+21:40:03 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18984	     20	   1916	  20920	   51b8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+21:41:09 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18984	     20	   1916	  20920	   51b8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+21:41:14 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18984	     20	   1916	  20920	   51b8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+16:39:33 **** Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:51:1: warning: data definition has no type or storage class
+   51 | FIFOWP[400];
+      | ^~~~~~
+../Core/Src/main.c:51:1: warning: type defaults to 'int' in declaration of 'FIFOWP' [-Wimplicit-int]
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:151:72: warning: passing argument 5 of 'HAL_I2C_Mem_Read' from incompatible pointer type [-Wincompatible-pointer-types]
+  151 |    HAL_I2C_Mem_Read(&hi2c1, MAX30101_ADDR, 0x04, I2C_MEMADD_SIZE_8BIT, FIFOWP, 4, 100);
+      |                                                                        ^~~~~~
+      |                                                                        |
+      |                                                                        int *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:571:133: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int *'
+  571 | HAL_StatusTypeDef HAL_I2C_Mem_Read(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                                                            ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  20776	     20	   3516	  24312	   5ef8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+16:41:31 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:51:1: warning: data definition has no type or storage class
+   51 | FIFOWP[400];
+      | ^~~~~~
+../Core/Src/main.c:51:1: warning: type defaults to 'int' in declaration of 'FIFOWP' [-Wimplicit-int]
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  18952	     20	   1916	  20888	   5198	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+17:33:56 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18952	     20	   1916	  20888	   5198	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:36:02 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18952	     20	   1916	  20888	   5198	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:47:58 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:51:1: warning: data definition has no type or storage class
+   51 | FIFOWP[400];
+      | ^~~~~~
+../Core/Src/main.c:51:1: warning: type defaults to 'int' in declaration of 'FIFOWP' [-Wimplicit-int]
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:151:72: warning: passing argument 5 of 'HAL_I2C_Mem_Read' from incompatible pointer type [-Wincompatible-pointer-types]
+  151 |    HAL_I2C_Mem_Read(&hi2c1, MAX30101_ADDR, 0x04, I2C_MEMADD_SIZE_8BIT, FIFOWP, 4, 100);
+      |                                                                        ^~~~~~
+      |                                                                        |
+      |                                                                        int *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:571:133: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int *'
+  571 | HAL_StatusTypeDef HAL_I2C_Mem_Read(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint16_t MemAddress, uint16_t MemAddSize, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                                                            ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  20776	     20	   3516	  24312	   5ef8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+17:49:51 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20776	     20	   3516	  24312	   5ef8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:58:15 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20776	     20	   3516	  24312	   5ef8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:58:52 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20776	     20	   3516	  24312	   5ef8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:59:34 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20776	     20	   3516	  24312	   5ef8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+18:39:37 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  20776	     20	   2316	  23112	   5a48	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+18:40:57 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20776	     20	   2316	  23112	   5a48	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+15:31:32 **** Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:124:82: error: 'Size' undeclared (first use in this function)
+  124 |   HAL_I2C_Mem_Write(&hi2c1, MAX30101_ADDR, 0x09, I2C_MEMADD_SIZE_8BIT, DataMode, Size, 100);
+      |                                                                                  ^~~~
+../Core/Src/main.c:124:82: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+15:31:56 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  18812	     20	   1916	  20748	   510c	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+15:46:28 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  18872	     20	   1916	  20808	   5148	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+16:56:13 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  20604	     20	   2316	  22940	   599c	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+17:03:33 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:156:51: error: lvalue required as unary '&' operand
+  156 |    HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, &0x04, 1, 1000);
+      |                                                   ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+17:05:59 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:157:51: error: lvalue required as unary '&' operand
+  157 |    HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, &FIFO_WR_PTR, 1, 1000);
+      |                                                   ^
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j20 all" terminated with exit code 2. Build might be incomplete.
+17:06:18 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:35:22: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   35 | #define  FIFO_WR_PTR 0x04
+      |                      ^~~~
+      |                      |
+      |                      int
+../Core/Src/main.c:157:51: note: in expansion of macro 'FIFO_WR_PTR'
+  157 |    HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, FIFO_WR_PTR, 1, 1000);
+      |                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:566:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int'
+  566 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                         ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  21332	     20	   2316	  23668	   5c74	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+17:08:54 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:35:22: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+   35 | #define  FIFO_WR_PTR 0x04
+      |                      ^~~~
+      |                      |
+      |                      int
+../Core/Src/main.c:157:51: note: in expansion of macro 'FIFO_WR_PTR'
+  157 |    HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, FIFO_WR_PTR, 1, 1000);
+      |                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:566:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int'
+  566 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                         ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  21504	     20	   2316	  23840	   5d20	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+17:11:13 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21504	     20	   2316	  23840	   5d20	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:12:00 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21504	     20	   2316	  23840	   5d20	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:21:08 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21504	     20	   2316	  23840	   5d20	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:30:18 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21504	     20	   2316	  23840	   5d20	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:31:41 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21504	     20	   2316	  23840	   5d20	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+17:33:50 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21504	     20	   2316	  23840	   5d20	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+19:18:21 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:158:51: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  158 |    HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, 0x04, 1, 1000);
+      |                                                   ^~~~
+      |                                                   |
+      |                                                   int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:566:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int'
+  566 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                         ~~~~~~~~~^~~~~
+../Core/Src/main.c:164:51: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  164 |    HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, 0x06, 1, 1000);
+      |                                                   ^~~~
+      |                                                   |
+      |                                                   int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:566:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int'
+  566 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                         ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  21544	     20	   1932	  23496	   5bc8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
+19:26:42 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-size   MAX30101LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21544	     20	   1932	  23496	   5bc8	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+19:52:06 **** Incremental Build of configuration Debug for project MAX30101LED ****
+make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:159:51: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  159 |    HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, 0x04, 1, 1000);
+      |                                                   ^~~~
+      |                                                   |
+      |                                                   int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:566:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int'
+  566 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                         ~~~~~~~~~^~~~~
+../Core/Src/main.c:165:51: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  165 |    HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, 0x06, 1, 1000);
+      |                                                   ^~~~
+      |                                                   |
+      |                                                   int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:566:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int'
+  566 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                         ~~~~~~~~~^~~~~
+../Core/Src/main.c:176:52: warning: passing argument 3 of 'HAL_I2C_Master_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  176 |     HAL_I2C_Master_Transmit(&hi2c1, MAX30101_ADDR, 0x07, 1, 1000);
+      |                                                    ^~~~
+      |                                                    |
+      |                                                    int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:358,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:566:98: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int'
+  566 | HAL_StatusTypeDef HAL_I2C_Master_Transmit(I2C_HandleTypeDef *hi2c, uint16_t DevAddress, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                                         ~~~~~~~~~^~~~~
+../Core/Src/main.c:175:13: warning: unused variable 'sample' [-Wunused-variable]
+  175 |     uint8_t sample[6];
+      |             ^~~~~~
+arm-none-eabi-gcc -o "MAX30101LED.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\FIBO\3-2\OnBoard\Onboard_MAX30101\MAX30101LED\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAX30101LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MAX30101LED.elf
+ 
+arm-none-eabi-size   MAX30101LED.elf 
+arm-none-eabi-objdump -h -S  MAX30101LED.elf  > "MAX30101LED.list"
+   text	   data	    bss	    dec	    hex	filename
+  21640	     20	   1940	  23600	   5c30	MAX30101LED.elf
+Finished building: default.size.stdout
+ 
+Finished building: MAX30101LED.list
+ 
